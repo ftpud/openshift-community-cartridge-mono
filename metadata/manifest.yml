@@ -1,16 +1,16 @@
 Name: mono
 Cartridge-Short-Name: MONO
-Display-Name: ASP.NET Cartridge using Mono
-Source-Url: https://github.com/wshearn/openshift-community-cartridge-mono.git
-Description: "ASP.NET for OpenShift."
+Display-Name: Mono
+Source-Url: https://github.com/ftpud/openshift-community-cartridge-mono.git
+Description: "Mono for OpenShift."
 Version: '3.0.7'
 License: "GPL/LGPL"
 Vendor: Xamarin
 Cartridge-Version: 1.0
-Cartridge-Vendor: wshearn
+Cartridge-Vendor: ftpud
 Categories:
   - service
-  - web_framework
+  - web_proxy
 Provides:
   - mono-3.0
   - "mono"
@@ -50,25 +50,6 @@ Cart-Data:
 Group-Overrides:
   - components:
     - mono-3.0.7
-    - web_proxy
-Publishes:
-  publish-http-url:
-    Type: "NET_TCP:httpd-proxy-info"
-  publish-gear-endpoint:
-    Type: "NET_TCP:gear-endpoint-info"
-Subscribes:
-  set-db-connection-info:
-    Type: "ENV:NET_TCP:db:connection-info"
-    Required: false
-  set-mysql-connection-info:
-    Type: "NET_TCP:db:mysql"
-    Required : false
-  set-postgres-connection-info:
-    Type: "NET_TCP:db:postgres"
-    Required : false
-  set-nosql-db-connection-info:
-    Type: "ENV:NET_TCP:nosqldb:connection-info"
-    Required : false
 Endpoints:
   - Private-IP-Name:   IP
     Private-Port-Name: PORT
@@ -77,4 +58,6 @@ Endpoints:
     Mappings:
       - Frontend:      ""
         Backend:       ""
-        Options:       { websocket: true }
+        Options:       
+          noproxy: true
+          websocket: true 
