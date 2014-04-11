@@ -63,5 +63,8 @@ Endpoints:
           websocket: false 
           
   - Private-IP-Name:   INTERNAL_SERVICE_IP
-    Private-Port: 5544
-    Public-Port-Name:  INTERNAL_SERVICE_PORT          
+    Private-IP-Name:   INTERNAL_SERVICE_PORT
+    Private-Port: 15544
+    Public-Port-Name:  INTERNAL_SERVICE_PROXY_PORT
+    Protocols:
+    - mysql
