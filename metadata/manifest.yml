@@ -56,14 +56,6 @@ Endpoints:
     Private-Port-Name: PORT
     Private-Port:      8080
     Public-Port-Name:  PROXY_PORT
-    Mappings:
-      - Frontend:      ""
-        Backend:       ""
-
-  - Private-IP-Name:     INTERNAL_SERVICE_IP
-    Private-Port-Name:   INTERNAL_SERVICE_PORT
-    Private-Port:        15544
-    Public-Port-Name:    INTERNAL_SERVICE_PROXY_PORT
     Protocols:
       - tcp
 
