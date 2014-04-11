@@ -63,5 +63,5 @@ Endpoints:
           websocket: false 
           
   - Private-IP-Name:   INTERNAL_SERVICE_IP
-    Private-Port-Name: 5544
+    Private-Port: 5544
     Public-Port-Name:  INTERNAL_SERVICE_PORT          
