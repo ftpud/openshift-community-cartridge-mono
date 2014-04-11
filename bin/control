@@ -7,10 +7,10 @@ HTTPD_CFG_DIR=$OPENSHIFT_MONO_DIR/etc/conf.d/
 HTTPD_PID_FILE=$OPENSHIFT_MONO_DIR/run/httpd.pid
 
 function apache() {
-    client_message "$2 Apache+mod_mono HTTPD server"
-    [ "$1" != "stop" ] && update_httpd_passenv $HTTPD_CFG_FILE
-    /usr/sbin/httpd -C "Include $HTTPD_CFG_DIR/*.conf" -f $HTTPD_CFG_FILE -k $1
-    return $?
+    #client_message "$2 Apache+mod_mono HTTPD server"
+    #[ "$1" != "stop" ] && update_httpd_passenv $HTTPD_CFG_FILE
+    #/usr/sbin/httpd -C "Include $HTTPD_CFG_DIR/*.conf" -f $HTTPD_CFG_FILE -k $1
+    #return $?
 }
 
 function stop() {
