@@ -50,7 +50,6 @@ Cart-Data:
 Group-Overrides:
   - components:
     - mono-3.0.7
-    - web_proxy
 Endpoints:
   - Private-IP-Name:   IP
     Private-Port-Name: PORT
@@ -60,6 +59,7 @@ Endpoints:
       - Frontend:      ""
         Backend:       ""
         Options:       { websocket: false }
+        
   - Private-IP-Name:   IP
     Private-Port-Name: ADMIN_PORT
     Private-Port:      9000
@@ -68,10 +68,6 @@ Endpoints:
     Mappings:
       - Frontend:      "/admin_front"
       - Backend:       "/admin_back"
-      
-  - Private-IP-Name:   IP
-    Private-Port: 5544
-    Public-Port-Name:  INTERNAL_SERVICE_PORT
     
   - Private-IP-Name:   IP
     Private-Port-Name: R_ADMIN_PORT
