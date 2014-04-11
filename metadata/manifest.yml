@@ -67,4 +67,4 @@ Endpoints:
     Private-Port: 15544
     Public-Port-Name:  INTERNAL_SERVICE_PROXY_PORT
     Protocols:
-    - mysql
+    - tcp
