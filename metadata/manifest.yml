@@ -50,6 +50,7 @@ Cart-Data:
 Group-Overrides:
   - components:
     - mono-3.0.7
+    - web_proxy
 Endpoints:
   - Private-IP-Name:   IP
     Private-Port-Name: PORT
@@ -59,5 +60,8 @@ Endpoints:
       - Frontend:      ""
         Backend:       ""
         Options:       
-          noproxy: true
-          websocket: true 
+          websocket: false 
+          
+  - Private-IP-Name:   INTERNAL_SERVICE_IP
+    Private-Port-Name: 5544
+    Public-Port-Name:  INTERNAL_SERVICE_PORT          
