@@ -58,16 +58,15 @@ Endpoints:
     Mappings:
       - Frontend:      ""
         Backend:       ""
-        Options:       { websocket: false }
-        
+        Options:       { websocket: true }
+      - Frontend:      "/health"
+        Backend:       ""
+        Options:       { health: true }
   - Private-IP-Name:   IP
-    Private-Port-Name: ADMIN_PORT
-    Private-Port:      9000
-    Public-Port-Name:  ADMIN_PROXY_PORT
-    Protocols:         [http]
-    Mappings:
-      - Frontend:      "/admin_front"
-      - Backend:       "/admin_back"
+    Private-Port-Name: PORT_TCP
+    Private-Port:      8090
+    Public-Port-Name:  PROXY_PORT_TCP
+    Options:           { "ssl_to_gear": true }
     
   - Private-IP-Name:   IP
     Private-Port-Name: R_ADMIN_PORT
