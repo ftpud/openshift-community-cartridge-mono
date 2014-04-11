@@ -60,3 +60,24 @@ Endpoints:
       - Frontend:      ""
         Backend:       ""
         Options:       { websocket: false }
+  - Private-IP-Name:   IP
+    Private-Port-Name: ADMIN_PORT
+    Private-Port:      9000
+    Public-Port-Name:  ADMIN_PROXY_PORT
+    Protocols:         [http]
+    Mappings:
+      - Frontend:      "/admin_front"
+      - Backend:       "/admin_back"
+      
+  - Private-IP-Name:   IP
+    Private-Port: 5544
+    Public-Port-Name:  INTERNAL_SERVICE_PORT
+    
+  - Private-IP-Name:   IP
+    Private-Port-Name: R_ADMIN_PORT
+    Private-Port:      16000
+    Public-Port-Name:  R_ADMIN_PROXY_PORT
+    Protocols:         [tcp]
+    Mappings:
+      - Frontend:      "/admin_front"
+      - Backend:       "/admin_back"
