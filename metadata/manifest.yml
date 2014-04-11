@@ -10,7 +10,7 @@ Cartridge-Version: 1.0
 Cartridge-Vendor: ftpud
 Categories:
   - service
-  - web_proxy
+  - web_framework
 Provides:
   - mono-3.0
   - "mono"
