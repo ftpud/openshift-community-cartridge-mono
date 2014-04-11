@@ -60,4 +60,4 @@ Endpoints:
     Mappings:
       - Frontend:      ""
         Backend:       ""
-        Options:       {tohttps: false}
+        Options:       { websocket: true }
