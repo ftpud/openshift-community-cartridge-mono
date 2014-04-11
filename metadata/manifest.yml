@@ -59,12 +59,11 @@ Endpoints:
     Mappings:
       - Frontend:      ""
         Backend:       ""
-        Options:       
-          websocket: false 
-          
-  - Private-IP-Name:   INTERNAL_SERVICE_IP
+
+  - Private-IP-Name:     INTERNAL_SERVICE_IP
     Private-Port-Name:   INTERNAL_SERVICE_PORT
-    Private-Port: 15544
-    Public-Port-Name:  INTERNAL_SERVICE_PROXY_PORT
+    Private-Port:        15544
+    Public-Port-Name:    INTERNAL_SERVICE_PROXY_PORT
     Protocols:
-    - tcp
+      - tcp
+
