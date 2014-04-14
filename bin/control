@@ -7,9 +7,9 @@ HTTPD_CFG_DIR=$OPENSHIFT_MONO_DIR/etc/conf.d/
 HTTPD_PID_FILE=$OPENSHIFT_MONO_DIR/run/httpd.pid
 
 function apache() {
-    client_message "$2 Starting Server"   	
-	cd $OPENSHIFT_DATA_DIR
-	mono Server.exe > log.txt 2> err.log &
+    client_message "$2 Starting Server"
+	cd $OPENSHIFT_REPO_DIR
+	mono Server.exe > "$OPENSHIFT_LOG_DIR/log.txt" 2> "$OPENSHIFT_LOG_DIR/err.log" &
     return $?
 }
 
