@@ -24,7 +24,7 @@ function configtest() {
 }
 
 function status() {
-   if output=$(curl http://$OPENSHIFT_MONO_IP:$OPENSHIFT_MONO_PORT/status 2>&1 )
+   if output=$(curl http://$OPENSHIFT_MONO_IP:$OPENSHIFT_MONO_PORT/health 2>&1 )
    then
       client_result "Application is running"
       client_result $output
