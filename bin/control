@@ -7,30 +7,24 @@ HTTPD_CFG_DIR=$OPENSHIFT_MONO_DIR/etc/conf.d/
 HTTPD_PID_FILE=$OPENSHIFT_MONO_DIR/run/httpd.pid
 
 function apache() {
-    client_message "$2 Apache+mod_mono HTTPD server"
-    #[ "$1" != "stop" ] && update_httpd_passenv $HTTPD_CFG_FILE
-    #/usr/sbin/httpd -C "Include $HTTPD_CFG_DIR/*.conf" -f $HTTPD_CFG_FILE -k $1
+    client_message "$2 Starting Server"   	
+	cd $OPENSHIFT_DATA_DIR
+	mono Server.exe > log.txt 2> err.log &
     return $?
 }
 
 function stop() {
-    client_message "Stopping Apache+mod_mono HTTPD server"
-    if [ -f "$HTTPD_PID_FILE" ]; then
-        httpd_pid=`cat "$HTTPD_PID_FILE" 2> /dev/null`
-    fi
-    ensure_valid_httpd_process "$HTTPD_PID_FILE" "$HTTPD_CFG_FILE"
-    /usr/sbin/httpd -C "Include $HTTPD_CFG_DIR/*.conf" -f $HTTPD_CFG_FILE -k stop
-    wait_for_stop $httpd_pid
+    client_message "Stopping Server"    
+    killall mono    
 }
 
 function configtest() {
-    client_message "Testing Apache *.conf files"
-    /usr/sbin/httpd -C "Include $HTTPD_CFG_DIR/*.conf" -f $HTTPD_CFG_FILE -t
+
     return $?
 }
 
 function status() {
-   if output=$(curl http://$OPENSHIFT_MONO_IP:$OPENSHIFT_MONO_PORT/server-status?auto 2>&1 )
+   if output=$(curl http://$OPENSHIFT_MONO_IP:$OPENSHIFT_MONO_PORT/status 2>&1 )
    then
       client_result "Application is running"
       client_result $output
