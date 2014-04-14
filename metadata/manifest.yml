@@ -1,4 +1,3 @@
----
 Name: mono
 Cartridge-Short-Name: MONO
 Display-Name: Mono
@@ -76,4 +75,3 @@ Endpoints:
     Backend: ''
     Options:
       health: true
-Id: 5348c1ae5973cad233000478
