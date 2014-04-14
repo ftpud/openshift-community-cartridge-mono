@@ -1,0 +1,1 @@
+ Put your Server.exe to $OPENSHIFT_DATA_DIR to make it runnable with 'gear start' command. Or modify ~/mono/bin/control script.
